@@ -6,6 +6,15 @@ require('dotenv').config();
 const apiRoutes = require('./routes/apiRoutes');
 
 
+//Enable CORS
+let allowCrossDomain = function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', "*");
+    res.header('Access-Control-Allow-Headers', "*");
+    next();
+  }
+app.use(allowCrossDomain)
+
+
 // Config port
 const PORT = process.env.PORT || 3001
 
