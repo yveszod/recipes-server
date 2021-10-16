@@ -31,6 +31,7 @@ mongoose.connect(db_string)
         console.log(`Connection Failed: ${err}`)
     })
 // Middleware
+app.use(express.json())
 // API Routes
 app.use('/api', apiRoutes);
 app.use(
