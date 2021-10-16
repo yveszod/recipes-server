@@ -25,7 +25,7 @@ router.post('/recipes', (req, res) => {
     });
     recipe.save()
         .then((result) => {
-            res.send('Added');
+            res.send(result);
             res.end();
         }).catch((err) => {
             console.log(err);
